@@ -19,21 +19,21 @@ public class View extends AnchorPane{
     private static final int DESKTOP = 500;
     private static final int BORDER_RADIUS = 5;
     
-    String colorFontLigth = "#ffffff";
-    String colorFontDark = "#776265";
-    String colorDesktopBackgound = "#bbada0";
-    String colorTileBackground = "#ccc0b3";
-    String colorTileBackground2 = "#eee4da";
-    String colorTileBackground4 = "#ede0c8";
-    String colorTileBackground8 = "#f2b179";
-    String colorTileBackground16 = "#f59563";
-    String colorTileBackground32 = "#f67c5f";
-    String colorTileBackground64 = "#f65e3b";
-    String colorTileBackground128 = "#edcf72";
-    String colorTileBackground256 = "#edcc61";
-    String colorTileBackground512 = "red";
-    String colorTileBackground1024 = "red";
-    String colorTileBackground2048 = "red";
+    private String colorFontLight = "#ffffff";
+    private String colorFontDark = "#776265";
+    private String colorDesktopBackgound = "#bbada0";
+    private String colorTileBackground = "#ccc0b3";
+    private String colorTileBackground2 = "#eee4da";
+    private String colorTileBackground4 = "#ede0c8";
+    private String colorTileBackground8 = "#f2b179";
+    private String colorTileBackground16 = "#f59563";
+    private String colorTileBackground32 = "#f67c5f";
+    private String colorTileBackground64 = "#f65e3b";
+    private String colorTileBackground128 = "#edcf72";
+    private String colorTileBackground256 = "#edcc61";
+    private String colorTileBackground512 = "red";
+    private String colorTileBackground1024 = "red";
+    private String colorTileBackground2048 = "red";
 
     private Node[][] tiles;
     
@@ -55,11 +55,11 @@ public class View extends AnchorPane{
                 final Node tile = getTileBackground();
                 getChildren().add(tile);
 
-                tile.setLayoutX( getBooderSize() + 
-                        ((getBooderSize() + getTileSize()) * x) );
+                tile.setLayoutX( getBorderSize() +
+                        ((getBorderSize() + getTileSize()) * x) );
 
-                tile.setLayoutY(getBooderSize() +
-                        ((getBooderSize() + getTileSize()) * y) );
+                tile.setLayoutY(getBorderSize() +
+                        ((getBorderSize() + getTileSize()) * y) );
                 
             }
             
@@ -89,7 +89,7 @@ public class View extends AnchorPane{
         if(value == 2 || value == 4)
             lbStyle += "-fx-text-fill: "+ colorFontDark + ";";
         else
-            lbStyle += "-fx-text-fill: "+ colorFontLigth + ";";
+            lbStyle += "-fx-text-fill: "+ colorFontLight + ";";
         
         if(value < 1000)
             label.setFont(new Font(getTileSize()/2));
@@ -157,7 +157,7 @@ public class View extends AnchorPane{
         return DESKTOP;
     }
     
-    public static double getBooderSize(){
+    public static double getBorderSize(){
         return BORDER;
     }
 
@@ -165,11 +165,11 @@ public class View extends AnchorPane{
         Node tile = getTile(value);
         tiles[x][y] = tile;
         
-        tile.setLayoutX(getBooderSize()
-                + ((getBooderSize() + getTileSize()) * x));
+        tile.setLayoutX(getBorderSize()
+                + ((getBorderSize() + getTileSize()) * x));
 
-        tile.setLayoutY(getBooderSize()
-                + ((getBooderSize() + getTileSize()) * y));
+        tile.setLayoutY(getBorderSize()
+                + ((getBorderSize() + getTileSize()) * y));
         
         tile.setScaleX(0.0);
         tile.setScaleY(0.0);
@@ -191,11 +191,11 @@ public class View extends AnchorPane{
         tiles[xStart][yStart] = null;
         tiles[xEnd][yEnd] = tile;
         
-        double x = getBooderSize()
-                + ((getBooderSize() + getTileSize()) * xEnd);
+        double x = getBorderSize()
+                + ((getBorderSize() + getTileSize()) * xEnd);
 
-        double y = getBooderSize()
-                + ((getBooderSize() + getTileSize()) * yEnd);
+        double y = getBorderSize()
+                + ((getBorderSize() + getTileSize()) * yEnd);
         
         
         Timeline timeline = new Timeline();
@@ -232,11 +232,11 @@ public class View extends AnchorPane{
         getChildren().add(tileClone2);
         Timeline timeline = new Timeline();
         
-        double x = getBooderSize()
-                + ((getBooderSize() + getTileSize()) * x2);
+        double x = getBorderSize()
+                + ((getBorderSize() + getTileSize()) * x2);
         
-        double y = getBooderSize()
-                + ((getBooderSize() + getTileSize()) * y2);
+        double y = getBorderSize()
+                + ((getBorderSize() + getTileSize()) * y2);
         
         KeyValue kvX = new KeyValue(tileClone1.layoutXProperty(), x);
         KeyValue kvY = new KeyValue(tileClone1.layoutYProperty(), y);
