@@ -21,8 +21,7 @@ public class View extends AnchorPane{
     
     String colorFontLigth = "#ffffff";
     String colorFontDark = "#776265";
-    public static final String colorBackgound = "#faf8ef";
-    String colorDestopBackgound = "#bbada0";
+    String colorDesktopBackgound = "#bbada0";
     String colorTileBackground = "#ccc0b3";
     String colorTileBackground2 = "#eee4da";
     String colorTileBackground4 = "#ede0c8";
@@ -46,7 +45,7 @@ public class View extends AnchorPane{
         setPrefSize(DESKTOP, DESKTOP);
         setMaxSize(DESKTOP, DESKTOP);
         
-        setStyle("-fx-background-color: " + colorDestopBackgound + ";" +
+        setStyle("-fx-background-color: " + colorDesktopBackgound + ";" +
                  "-fx-background-radius: 10;"    
                 );
         
